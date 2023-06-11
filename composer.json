@@ -22,5 +22,8 @@
             "name": "Minzord",
             "email": "contact@minzord.fr"
         }
-    ]
+    ],
+    "scripts": {
+        "web": "php -S localhost:8000 -t public"
+    }
 }
