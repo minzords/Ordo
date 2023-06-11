@@ -1,0 +1,26 @@
+{
+    "name": "minzord/ordo",
+    "description": "Le Calendrier Liturgique (Ordo) de la Fraternité Sacerdotale Saint Pie X (FSSPX).",
+    "type": "project",
+    "require": {
+        "rmccue/requests": "^2.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Class\\": "Class/",
+            "Router\\": "Router/",
+            "Exceptions\\": "Exceptions/",
+            "Controllers\\": "Controllers/",
+            "Source\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Minzord",
+            "email": "contact@minzord.fr"
+        }
+    ]
+}
