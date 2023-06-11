@@ -3,6 +3,7 @@
     "description": "Le Calendrier Liturgique (Ordo) de la Fraternité Sacerdotale Saint Pie X (FSSPX).",
     "type": "project",
     "require": {
+        "php": ">=8.1",
         "rmccue/requests": "^2.0"
     },
     "require-dev": {
