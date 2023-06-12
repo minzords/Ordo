@@ -12,5 +12,6 @@ $router = new Router();
 $router->register('/', ['Controllers\HomeController', 'index']);
 $router->register('/aujourd\'hui', ['Controllers\HomeController', 'today']);
 $router->register('/demain', ['Controllers\HomeController', 'tomorrow']);
+$router->register('/mois', ['Controllers\HomeController', 'mouth']);
 
 (new App($router, $_SERVER['REQUEST_URI']))->run();

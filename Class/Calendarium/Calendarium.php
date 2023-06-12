@@ -52,4 +52,10 @@ class Calendarium
 
         return $request;
     }
+
+    public function removehtmltags($array) {
+        $array = str_replace(['<sup>', '</sup>'], '', $array);
+        $array = str_replace(['<span class="ordo-titulus">', '</span>'], '', $array);
+        return $array;
+    }
 }

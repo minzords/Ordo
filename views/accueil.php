@@ -7,6 +7,22 @@
     <title>Ordo</title>
 </head>
 <body>
-    <h1>Aujourd'hui: <?php echo($calendarium); ?></h1>
+    <style  type="text/css">
+        table,td,tr {
+            border: 2px solid black;
+            border-collapse: collapse;
+            font-size: 20px;
+            padding: 10px;
+        }
+    </style>
+
+    <h1>Ordo</h1>
+    <table>
+        <?php
+            foreach ($calendarium as $key => $value) {
+                echo('<tr><td>' . $key . '</td><td>' . $value . '</td></tr>');
+            }
+        ?>
+    </table>
 </body>
 </html>
