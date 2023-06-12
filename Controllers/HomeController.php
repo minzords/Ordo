@@ -24,7 +24,7 @@ class HomeController
         return $calendarium;
     }
 
-    public function mouth() : array{
+    public function month() : array{
         $response = $this->calendariumMonth();
         return dd($response);
     }
