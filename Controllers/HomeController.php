@@ -12,14 +12,26 @@ class HomeController
         return Renderer::make('accueil', ['calendarium' => $today]);
     }
 
-    private function today() : string {
+    public function today() : string {
         $calendarium = new Calendarium();
         $calendarium = $calendarium->getGenitivusByDate(self::datetoday());
+        return $calendarium;
+    }
+
+    public function tomorrow() : string {
+        $calendarium = new Calendarium();
+        $calendarium = $calendarium->getGenitivusByDate(self::datetomorrow());
         return $calendarium;
     }
 
     private function datetoday() : string {
         $currentDate = date('Y-m-d');
         return $currentDate;
+    }
+
+    private function dateTomorrow() : string {
+        $currentDate = date('Y-m-d');
+        $tomorrow = date('Y-m-d', strtotime($currentDate . ' + 1 days'));
+        return $tomorrow;
     }
 }
