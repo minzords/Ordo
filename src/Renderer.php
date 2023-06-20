@@ -12,6 +12,10 @@ class Renderer
         $this->param = $param;
     }   
 
+    /**
+     * Display the view
+     * @return string
+     */
     public function view()
     {
         extract($this->param);

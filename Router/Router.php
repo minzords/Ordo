@@ -8,11 +8,20 @@ class Router
 {
     private array $routes;
 
+    /**
+     * Register a route and its action.
+     * @param string $path
+     * @param callable|array $action
+     */
     public function register(string $path, callable|array $action): void
     {
         $this->routes[$path] = $action;
     }
 
+    /**
+     * Resolve the route and check if it exists.
+     * @throws RouteNotFoundException
+     */
     public function resolve(string $uri): mixed
     {
         $path = explode('?', $uri)[0];
