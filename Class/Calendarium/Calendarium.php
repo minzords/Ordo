@@ -57,7 +57,7 @@ class Calendarium
      * Remove html tags from the array (sup and span)
      *
      * @param array $array
-     * @return void
+     * @return array
      */
     public function removehtmltags($array) {
         $array = str_replace(['<sup>', '</sup>'], '', $array);
