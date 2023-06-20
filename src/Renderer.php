@@ -31,7 +31,7 @@ class Renderer
      * Make a new instance of the Renderer class
      *
      * @param string $viewPath
-     * @param [type] ...$params
+     * @param $params
      * @return static
      */
     public static function make(string $viewPath, $param): static
