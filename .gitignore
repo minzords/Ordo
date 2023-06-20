@@ -1,3 +1,5 @@
+.phpdoc
 .phpunit.cache
 composer.lock
 vendor
+phpDocumentor.phar
