@@ -46,7 +46,7 @@ class HomeController
      */
     public function month() : array{
         $response = $this->calendariumMonth();
-        return dd($response);
+        return $response;
     }
 
     /**
