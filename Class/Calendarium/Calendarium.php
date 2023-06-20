@@ -59,7 +59,7 @@ class Calendarium
      * @param array $array
      * @return array
      */
-    public function removehtmltags($array) {
+    public function removehtmltags($array) : array {
         $array = str_replace(['<sup>', '</sup>'], '', $array);
         $array = str_replace(['<span class="ordo-titulus">', '</span>'], '', $array);
         return $array;
