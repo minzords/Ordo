@@ -26,6 +26,7 @@
         }
     ],
     "scripts": {
+        "doc": "php phpDocumentor.phar -d . -t docs -i vendor",
         "web": "php -S localhost:8000 -t public"
     }
 }
