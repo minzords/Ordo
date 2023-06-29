@@ -52,6 +52,7 @@ class CalendariumTest extends TestCase {
 
         $this->assertIsString($result); // Check if the result is a string
         $this->assertNotEmpty($result); // Check if the result is not empty
+        $this->assertEquals('Jeudi de la Pentecôte', $result); // Check if the result is equal to "Jeudi de la Pentecôte"
     }
     
 }
