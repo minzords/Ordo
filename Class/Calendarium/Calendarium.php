@@ -16,7 +16,7 @@ class Calendarium
      * @param string $timeend
      * 
      */
-    public function getCalendarium(string $timestart,  string $timeend): string {
+    public function getCalendarium(string $timestart, string $timeend): string {
         $response = Requests::get('https://api2.laportelatine.org/la-porte-latine/items/ordo_calendarium?fields=*&limit=40&filter[datum][between]=' . $timestart . ',' . $timeend);
         return ($response->body);
     }
@@ -59,7 +59,7 @@ class Calendarium
      * @param array $array
      * @return array
      */
-    public function removehtmltags($array) : array {
+    public function removehtmltags(array $array) : array {
         $array = str_replace(['<sup>', '</sup>'], '', $array);
         $array = str_replace(['<span class="ordo-titulus">', '</span>'], '', $array);
         return $array;
