@@ -66,6 +66,11 @@ Search.appendIndex(
             "summary": "Return\u0020the\u0020calendarium\u0020of\u0020the\u0020month",
             "url": "classes/Controllers-HomeController.html#method_calendariumMonth"
         },                {
+            "fqsen": "\\Controllers\\HomeController\u003A\u003AToJson\u0028\u0029",
+            "name": "ToJson",
+            "summary": "Return\u0020array\u0020to\u0020json",
+            "url": "classes/Controllers-HomeController.html#method_ToJson"
+        },                {
             "fqsen": "\\Exceptions\\RouteNotFoundException",
             "name": "RouteNotFoundException",
             "summary": "",

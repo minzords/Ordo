@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Source\Renderer;
 use Class\Calendarium\Calendarium;
+use PHPUnit\Util\Json;
 
 class HomeController
 {
@@ -25,7 +26,7 @@ class HomeController
     public function today() : string {
         $calendarium = new Calendarium();
         $calendarium = $calendarium->getGenitivusByDate(self::datetoday());
-        return $calendarium;
+        return (self::ToJson($calendarium));
     }
 
     /**
@@ -36,7 +37,7 @@ class HomeController
     public function tomorrow() : string {
         $calendarium = new Calendarium();
         $calendarium = $calendarium->getGenitivusByDate(self::datetomorrow());
-        return $calendarium;
+        return (self::ToJson($calendarium));
     }
 
     /**
@@ -44,9 +45,9 @@ class HomeController
      *
      * @return array
      */
-    public function month() : array{
+    public function month() : string{
         $response = $this->calendariumMonth();
-        return $response;
+        return (self::ToJson($response));
     }
 
     /**
@@ -98,5 +99,16 @@ class HomeController
         $nomenarray = array_combine($dateArray, $calendarium->removehtmltags($nomenarray));
         
         return $nomenarray;
+    }
+
+    /**
+     * Return array to json
+     * @param string $response
+     * @return string
+     */
+    public function ToJson(string|array $response) : string {
+        header('Content-Type: application/json');
+        $response = json_encode($response);
+        return $response;
     }
 }
