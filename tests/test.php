@@ -54,5 +54,28 @@ class CalendariumTest extends TestCase {
         $this->assertNotEmpty($result); // Check if the result is not empty
         $this->assertEquals('Jeudi de la Pentecôte', $result); // Check if the result is equal to "Jeudi de la Pentecôte"
     }
-    
+
+    /**
+     * Test the index method of the HomeController
+     * @test
+     * @covers HomeController::index
+     * @return void
+     */
+    public function getHomePage(){
+        $instance = new Controllers\HomeController();
+        $result = $instance->index();
+        $this->assertIsObject($result); // Check if the result
+    }
+
+    /**
+     * Test the today method of the HomeController
+     * @test
+     * @covers HomeController::today
+     * @return void
+     */
+    public function getToday(){
+        $instance = new Controllers\HomeController();
+        $result = $instance->today();
+        $this->assertIsString($result); // Check if the result
+    }
 }
