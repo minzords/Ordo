@@ -10,8 +10,6 @@ class Router
 
     /**
      * Register a route and its action.
-     * @param string $path
-     * @param callable|array $action
      */
     public function register(string $path, callable|array $action): void
     {
@@ -20,6 +18,7 @@ class Router
 
     /**
      * Resolve the route and check if it exists.
+     *
      * @throws RouteNotFoundException
      */
     public function resolve(string $uri): mixed
@@ -30,16 +29,17 @@ class Router
         if (is_callable($action)) {
             return $action();
         }
-        
+
         if (is_array($action)) {
             [$className, $method] = $action;
 
             if (class_exists($className) && method_exists($className, $method)) {
-                $class = new $className();
+                $class = new $className;
+
                 return call_user_func_array([$class, $method], []);
             }
         }
 
-        throw new RouteNotFoundException();
+        throw new RouteNotFoundException;
     }
 }

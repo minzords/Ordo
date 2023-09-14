@@ -21,3 +21,6 @@ jobs:
 
       - name: Run PhpUnit
         run: vendor/bin/phpunit
+
+      - name: Run Lint
+        run: vendor/bin/duster lint

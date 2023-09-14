@@ -1,7 +1,7 @@
 <?php
 
-use Source\App;
 use Router\Router;
+use Source\App;
 
 require './../vendor/autoload.php';
 
@@ -10,7 +10,7 @@ define('BASE_VIEW_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views' . DIRE
 /**
  * Initalize the router
  */
-$router = new Router();
+$router = new Router;
 
 /**
  * Web routes

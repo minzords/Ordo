@@ -10,10 +10,21 @@ class Renderer
     public function __construct(private string $viewPath, array $param = [])
     {
         $this->param = $param;
-    }   
+    }
+
+    /**
+     * Make a new instance of the Renderer class
+     *
+     * @param $params
+     */
+    public static function make(string $viewPath, $param): static
+    {
+        return new static($viewPath, $param);
+    }
 
     /**
      * Display the view
+     *
      * @return string
      */
     public function view()
@@ -26,19 +37,6 @@ class Renderer
 
         return ob_get_clean();
     }
-
-    /**
-     * Make a new instance of the Renderer class
-     *
-     * @param string $viewPath
-     * @param $params
-     * @return static
-     */
-    public static function make(string $viewPath, $param): static
-    {
-        return new static($viewPath, $param);
-    }
-
 
     public function __toString()
     {

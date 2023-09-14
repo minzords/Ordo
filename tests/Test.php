@@ -1,21 +1,26 @@
 <?php
 
 use Class\Calendarium\Calendarium;
+use Controllers\HomeController;
 use PHPUnit\Framework\TestCase;
 
-class CalendariumTest extends TestCase {
-
+class Test extends TestCase
+{
     /**
      * Test the getCalendarium method
+     *
      * @test
+     *
      * @covers Calendarium::getCalendarium
+     *
      * @return void
      */
-    public function getCalendarium(){
+    public function getCalendarium()
+    {
         $timestart = '2023-06-01';
         $timeend = '2023-06-30';
 
-        $instance = new Calendarium();
+        $instance = new Calendarium;
         $result = $instance->getCalendarium($timestart, $timeend);
 
         $this->assertIsString($result); // Check if the result is a string
@@ -24,14 +29,18 @@ class CalendariumTest extends TestCase {
 
     /**
      * Test the getCalendariumByDate method
+     *
      * @test
+     *
      * @covers Calendarium::getCalendariumByDate
+     *
      * @return void
      */
-    public function getCalendariumByDate(){
+    public function getCalendariumByDate()
+    {
         $date = '2023-06-01';
 
-        $instance = new Calendarium();
+        $instance = new Calendarium;
         $result = $instance->getCalendariumByDate($date);
 
         $this->assertIsString($result); // Check if the result is a string
@@ -40,14 +49,18 @@ class CalendariumTest extends TestCase {
 
     /**
      * Test the getGenitivus method
+     *
      * @test
+     *
      * @covers Calendarium::getGenitivusByDate
+     *
      * @return void
      */
-    public function getGenitivusByDate(){
+    public function getGenitivusByDate()
+    {
         $date = '2023-06-01';
 
-        $instance = new Calendarium();
+        $instance = new Calendarium;
         $result = $instance->getGenitivusByDate($date);
 
         $this->assertIsString($result); // Check if the result is a string
@@ -57,24 +70,32 @@ class CalendariumTest extends TestCase {
 
     /**
      * Test the index method of the HomeController
+     *
      * @test
+     *
      * @covers HomeController::index
+     *
      * @return void
      */
-    public function getHomePage(){
-        $instance = new Controllers\HomeController();
+    public function getHomePage()
+    {
+        $instance = new HomeController;
         $result = $instance->index();
         $this->assertIsObject($result); // Check if the result
     }
 
     /**
      * Test the today method of the HomeController
+     *
      * @test
+     *
      * @covers HomeController::today
+     *
      * @return void
      */
-    public function getToday(){
-        $instance = new Controllers\HomeController();
+    public function getToday()
+    {
+        $instance = new HomeController;
         $result = $instance->today();
         $this->assertIsString($result); // Check if the result
     }
