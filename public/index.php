@@ -18,6 +18,7 @@ $router = new Router;
 $router->register('/', ['Controllers\HomeController', 'index']);
 $router->register('/aujourd\'hui', ['Controllers\HomeController', 'today']);
 $router->register('/demain', ['Controllers\HomeController', 'tomorrow']);
+$router->register('/semaine', ['Controllers\HomeController', 'week']);
 $router->register('/mois', ['Controllers\HomeController', 'month']);
 
 /**

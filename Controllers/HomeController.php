@@ -29,6 +29,17 @@ class HomeController
     }
 
     /**
+     * Return the saint/feast of the week in view
+     */
+    public function week(): string
+    {
+        $calendarium = new Calendarium;
+        $calendarium = $calendarium->getCalendarium(self::datetoday(), self::dateWeek());
+
+        return self::ToJson($calendarium);
+    }
+
+    /**
      * Return the saint/feast of tomorrow in view
      */
     public function tomorrow(): string
@@ -81,6 +92,17 @@ class HomeController
     {
         $currentDate = date('Y-m-d');
         $tomorrow = date('Y-m-d', strtotime($currentDate . ' + 1 days'));
+
+        return $tomorrow;
+    }
+
+    /**
+     * Return the calendarium of week
+     */
+    private function dateWeek(): string
+    {
+        $currentDate = date('Y-m-d');
+        $tomorrow = date('Y-m-d', strtotime($currentDate . ' + 6 days'));
 
         return $tomorrow;
     }
